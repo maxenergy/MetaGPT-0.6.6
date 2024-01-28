@@ -45,7 +45,6 @@ LOGIC_ANALYSIS = ActionNode(
     ],
 )
 
-
 TASK_LIST = ActionNode(
     key="Task list",
     expected_type=List[str],
@@ -53,7 +52,6 @@ TASK_LIST = ActionNode(
                 "Include both header files and source files.",
     example=["Game.h", "Game.cpp", "Main.cpp"],
 )
-
 
 FULL_API_SPEC = ActionNode(
     key="Full API spec",
@@ -78,7 +76,6 @@ FULL_API_SPEC = ActionNode(
             "..."
 )
 
-
 SHARED_KNOWLEDGE = ActionNode(
     key="Shared Knowledge",
     expected_type=str,
@@ -88,8 +85,6 @@ SHARED_KNOWLEDGE = ActionNode(
     example="'Utils.h/cpp' contains common utility functions like logging and data parsing, which are used across "
             "the project. Include 'Utils.h' in files where these functions are needed."
 )
-
-
 
 ANYTHING_UNCLEAR_PM = ActionNode(
     key="Anything UNCLEAR",
@@ -118,17 +113,6 @@ PM_NODE = ActionNode.from_children("PM_NODE", NODES)
 
 
 def main():
-    shared_knowledge_info = [
-        "The project uses GStreamer for media processing. Documentation is available in the /docs directory.",
-        "We have a set of common utility functions in Utils.h that are used across various modules.",
-        "Global configuration settings are defined in Config.h."
-    ]
-    shared_knowledge_str = "\n".join(shared_knowledge_info)
-
-    # 直接在生成提示时使用 shared_knowledge_str
-    context = {"Shared Knowledge": shared_knowledge_str}
-
-    # 编译并输出提示
     prompt = PM_NODE.compile(context="")
     logger.info(prompt)
 

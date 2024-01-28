@@ -21,7 +21,7 @@ PROGRAMMING_LANGUAGE = ActionNode(
     key="Programming Language",
     expected_type=str,
     instruction="Specify the main programming language used in the project, such as C++, Python, JavaScript, etc.",
-    example="C++",  # 可以根据实际情况调整为 "Python", "JavaScript", 或其他任何主流编程语言
+    example="C++",  
 )
 
 CMAKE_CONFIGURATION = ActionNode(
@@ -30,7 +30,7 @@ CMAKE_CONFIGURATION = ActionNode(
     instruction="Provide a basic CMake configuration for the C++ project.",
     example="cmake_minimum_required(VERSION 3.10)\n"
             "project(ProjectName)\n"
-            "set(CMAKE_CXX_STANDARD 14)\n"
+            "set(CMAKE_CXX_STANDARD 17)\n"
             "add_executable(ProjectName main.cpp)\n"
             "# Add other CMake configuration as needed."
 )
@@ -39,7 +39,7 @@ ORIGINAL_REQUIREMENTS = ActionNode(
     key="Original Requirements",
     expected_type=str,
     instruction="Place the original user's requirements here. This should reflect the core objectives and features expected in the project.",
-    example="Develop a high-performance data processing module using C++",  # 示例可以根据具体的C++项目需求来定制
+    example="Develop a high-performance data processing module using C++",  # 示锟斤拷锟斤拷锟皆革拷锟捷撅拷锟斤拷锟紺++锟斤拷目锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
 )
 
 PROJECT_NAME = ActionNode(
